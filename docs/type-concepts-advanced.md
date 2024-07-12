@@ -9,7 +9,7 @@ val_str: str = "hi"
 val_int: int = 3
 
 def func(val: float | str | complex, test: bool):
-    reveal_type(val) # int | str | complex
+    reveal_type(val) # float | str | complex
 
     val = val_int # Type is narrowed to int
     reveal_type(val) # int
@@ -18,7 +18,7 @@ def func(val: float | str | complex, test: bool):
         val = val_str # Type is narrowed to str
         reveal_type(val) # str
     
-    reveal_type(val) # int | str
+    reveal_type(val) # str | int
 
     if isinstance(val, int):
         reveal_type(val) # int
